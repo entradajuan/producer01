@@ -1,18 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
-	
-    <h:head>
-        <title>JSF 2.0 Hello World</title>
-    </h:head>
-    <h:body>
-    	<h2>JSF 2.0 Hello World Example - hello.xhtml</h2>
-    	<h:form>
-    	   <h:inputText value="#{helloBean.name}"></h:inputText>
-    	   <h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
-    	</h:form>
-    </h:body>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Title</title>
+
+</h:head>
+
+<h:body>
+
+	<p:growl id="messages"></p:growl>
+
+	<h:form id="form">
+		<p:panel id="loginPnl" header="Producer"
+			style="width: 350px; margin: 0 auto;">
+			<h:panelGrid id="loginPanel" columns="2" cellpadding="5">
+				<h:outputText value="userId" />
+				<p:inputText id="userId" value="#{mainBean.userId}"></p:inputText>
+				<p:spacer /><p:spacer />	
+				<h:outputText value="msgId" />
+				<p:inputText id="msgId" value="#{mainBean.msgId}"></p:inputText>
+				<p:spacer /><p:spacer />	
+
+			</h:panelGrid>
+			<h:panelGrid columns="1" cellpadding="10" width="100%">
+				<h:commandLink id="loginButton" action="#{mainBean.save}"
+					value="send" update="form" ajax="true" style="float: right;" >
+				</h:commandLink>
+			</h:panelGrid>
+		</p:panel>
+
+	</h:form>
+ 	
+</h:body>
 </html>
