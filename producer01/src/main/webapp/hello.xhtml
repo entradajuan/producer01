@@ -8,14 +8,12 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Title</title>
+	<title>Producer</title>
 
 </h:head>
 
 <h:body>
-
 	<p:growl id="messages"></p:growl>
-
 	<h:form id="form">
 		<p:panel id="loginPnl" header="Producer"
 			style="width: 350px; margin: 0 auto;">
@@ -26,7 +24,6 @@
 				<h:outputText value="msgId" />
 				<p:inputText id="msgId" value="#{mainBean.msgId}"></p:inputText>
 				<p:spacer /><p:spacer />	
-
 			</h:panelGrid>
 			<h:panelGrid columns="1" cellpadding="10" width="100%">
 				<h:commandLink id="loginButton" action="#{mainBean.save}"
@@ -34,8 +31,6 @@
 				</h:commandLink>
 			</h:panelGrid>
 		</p:panel>
-
-	</h:form>
- 	
+	</h:form> 	
 </h:body>
 </html>
